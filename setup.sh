@@ -15,6 +15,12 @@ function create_link {
             *debian*)
                 dest="$target/debian"
             ;;
+            *raspbian*)
+                dest="$target/raspbian"
+            ;;
+            *webmin*)
+                dest="$target/webmin"
+            ;;
         esac
         if [ ! -h "$dest" ] && [ x"$dest" != x"" ]; then
             echo "[$(date)] Create $dest"

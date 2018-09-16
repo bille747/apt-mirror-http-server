@@ -1,11 +1,10 @@
-FROM ubuntu:16.04
-MAINTAINER Terry Chen <seterrychen@gmail.com>
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV RESYNC_PERIOD 12h
 
 RUN apt-get update \
-  && apt-get install --no-install-recommends -y apt-mirror apache2 \
+  && apt-get install --no-install-recommends -y apt-mirror apache2 nano \
   && mv /etc/apt/mirror.list / \
   && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
